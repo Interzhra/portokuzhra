@@ -238,6 +238,37 @@
             border-top: 1px solid #2a6855;
         }
 
+/* Gaya Sticky Note dengan efek hover berputar */
+        .sticky-note {
+            background-color: #fffa8b; /* Warna kuning khas note */
+            color: #333333;
+            padding: 15px;
+            width: 180px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+            font-size: 14px;
+            position: absolute; 
+            transform: rotate(-5deg); /* Posisi awal miring ke kiri */
+            z-index: 10;
+            
+            /* Menambahkan transisi agar gerakannya halus */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Saat kursor mendekat (hover) */
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.05); /* Berubah jadi lurus (0 derajat) dan sedikit membesar */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih tebal */
+        }
+
+        .sticky-note .note-title {
+            font-size: 11px;
+            color: #8c7b00;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         /* Responsive untuk layar HP (Screen Kecil) */
         @media (max-width: 600px) {
             .profile-header {
@@ -327,12 +358,11 @@
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-btn instagram">Instagram</a>
             </div>
             
-            </div>
-            <div class="mt-8 rotate-[4deg] shadow-xl bg-[#fffa8b] text-slate-800 p-4 rounded-sm w-52 transition-transform hover:rotate-0 duration-300">
-                <div class="text-xs text-amber-800/60 font-mono mb-1">#note</div>
-                <p class="font-handwriting text-xl text-slate-900 leading-snug">STMM Yogyakarta — MIK</p>
-            </div>
 
+        <div class="sticky-note" style="top: 180px; left: 200px;">
+            <div class="note-title"># Catatan</div>
+            <p>Mahasiswa Aktif STMM Yogyakarta!</p>
+        </div>
         </section>
     </div>
 
